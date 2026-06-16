@@ -1,0 +1,89 @@
+ version: 2
+ models:
+  - name: stg_movies
+    columns:
+      - name: movie_id
+        data_tests:
+          - unique
+          - not_null
+      - name: title
+        data_tests:
+          - not_null
+      - name: release_year
+        data_tests:
+          - not_null
+      - name: director
+        data_tests:
+          - not_null
+      - name: rank
+        data_tests:
+          - unique
+          - not_null
+      - name: custom_score
+        data_tests:
+          - not_null
+      - name: language
+        data_tests:
+          - not_null
+      - name: plot
+        data_tests:
+          - not_null
+      - name: awards
+        description: "The awards won by the movie. Nullable — not all movies have award data recorded."
+      - name: production_company
+        description: "The production company of the movie. Nullable — not available for all movies."
+      - name: rt_url
+        description: "The URL of the movie's page on Rotten Tomatoes. Nullable — not all movies are listed on Rotten Tomatoes."
+
+  - name: stg_movie_scores
+    columns:
+      - name: movie_id
+        data_tests:
+          - unique
+          - not_null
+      - name: flickmetrix_score
+        data_tests:
+          - not_null
+      - name: imdb_score
+        data_tests:
+          - not_null
+      - name: imdb_score_100
+        data_tests:
+          - not_null
+      - name: imdb_votes
+        data_tests:
+          - not_null
+      - name: metacritic_score
+        description: "Nullable — not all movies are listed on Metacritic."
+      - name: rt_critic_score
+        description: "Nullable — not all movies are listed on Rotten Tomatoes."
+      - name: critic_review_count
+        description: "Nullable — not all movies are listed on Rotten Tomatoes."
+      - name: audience_score
+        description: "Nullable — not all movies are listed on Rotten Tomatoes."
+      - name: audience_review_count
+        description: "Nullable — not all movies are listed on Rotten Tomatoes."
+      - name: letterboxd_score
+        description: "Nullable — not all movies are listed on Letterboxd."
+      - name: letterboxd_votes
+        description: "Nullable — missing for some entries."
+      - name: google_score
+        description: "Nullable — not available for all movies."
+
+  - name: stg_movie_genres
+    columns:
+      - name: movie_id
+        data_tests:
+          - not_null
+      - name: genre
+        data_tests:
+          - not_null
+
+  - name: stg_movie_streaming
+    columns:
+      - name: movie_id
+        data_tests:
+          - not_null
+      - name: platform
+        data_tests:
+          - not_null 

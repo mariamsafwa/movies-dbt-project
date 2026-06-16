@@ -1,0 +1,91 @@
+version: 2
+seeds:
+  - name: raw_movies
+    description: "This seed file contains the top 500 movies of all time, along with their release year, genre, and rating."
+    columns:
+      - name: Rank
+        description: "The rank of the movie based on its rating."
+        data_tests:
+          - unique
+          - not_null
+      - name: Title
+        description: "The title of the movie."
+        data_tests:
+          - not_null
+      - name: Year
+        description: "The year the movie was released."
+        data_tests:
+          - not_null
+      - name: Genre
+        description: "The genre of the movie. May contain multiple genres separated by commas."
+        data_tests:
+          - not_null
+      - name: Director
+        description: "The director of the movie."
+        data_tests:
+          - not_null
+      - name: Cast
+        description: "The main cast of the movie. Nullable — cast data missing for some entries."
+      - name: Language
+        description: "The language of the movie."
+        data_tests:
+          - not_null
+      - name: Plot
+        description: "A brief summary of the movie's plot."
+        data_tests:
+          - not_null
+      - name: Awards
+        description: "The awards won by the movie. Nullable — not all movies have award data recorded."
+      - name: Production
+        description: "The production company of the movie. Nullable — not available for all movies."
+      - name: Flickmetrix_Score
+        description: "The combined score of the movie on Flickmetrix."
+        data_tests:
+          - not_null
+      - name: IMDb_10
+        description: "The score of the movie on IMDb out of 10."
+        data_tests:
+          - not_null
+      - name: IMDb_100
+        description: "The score of the movie on IMDb out of 100."
+        data_tests:
+          - not_null
+      - name: IMDb_Votes
+        description: "The number of votes the movie has received on IMDb."
+        data_tests:
+          - not_null
+      - name: Metacritic
+        description: "The score of the movie on Metacritic. Nullable — not all movies are listed on Metacritic."
+      - name: Critic_Rating_RT
+        description: "The critic rating of the movie on Rotten Tomatoes."
+        data_tests:
+          - not_null
+      - name: Critic_Reviews
+        description: "The number of critic reviews the movie has received on Rotten Tomatoes."
+        data_tests:
+          - not_null
+      - name: Audience_Rating
+        description: "The audience rating of the movie on Rotten Tomatoes. Nullable — not available for all movies."
+      - name: Audience_Reviews
+        description: "The number of audience reviews on Rotten Tomatoes. Nullable — not available for all movies."
+      - name: Letterboxd
+        description: "The score of the movie on Letterboxd."
+        data_tests:
+          - not_null
+      - name: Letterboxd_Votes
+        description: "The number of votes the movie has received on Letterboxd. Nullable — missing for one entry."
+      - name: Google_Score
+        description: "The score of the movie on Google. Nullable — not available for all movies."
+      - name: Streaming_On
+        description: "The streaming platforms where the movie is available. Nullable — may not be streaming anywhere currently."
+      - name: RT_URL
+        description: "The URL of the movie's page on Rotten Tomatoes. Nullable — not all movies have an RT page."
+      - name: imdbID
+        description: "The IMDb ID of the movie — primary key of this dataset."
+        data_tests:
+          - unique
+          - not_null
+      - name: Custom_Score
+        description: "A custom score calculated based on various factors such as ratings and reviews."
+        data_tests:
+          - not_null
